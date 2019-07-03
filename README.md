@@ -7,7 +7,7 @@ Minimalistic internationalization JavaScript library
 ## Installation
 
 ```shell
-TODO
+npm install minimalistic-i18n
 ```
 
 ## Usage
