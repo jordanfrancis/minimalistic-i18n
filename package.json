@@ -1,0 +1,24 @@
+{
+  "name": "minimalistic-i18n",
+  "version": "1.0.0",
+  "description": "Minimalistic internationalization JavaScript library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanfrancis/i18n.git"
+  },
+  "keywords": [
+    "internationalization",
+    "i18n",
+    "translation"
+  ],
+  "author": "Jordan Francis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordanfrancis/i18n/issues"
+  },
+  "homepage": "https://github.com/jordanfrancis/i18n#readme"
+}
