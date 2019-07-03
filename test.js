@@ -36,7 +36,28 @@ describe('i18n', () => {
     });
 
     describe('#i18n()', () => {
-        it('should output value for locale dictionary key', () => {
+        it('should return translation when passed valid path of dictionary', () => {
+            i18n.addLocale('en', {
+                hello: 'Hi there!'
+            });
+
+            i18n.setLocale('en');
+
+            assert.equal(i18n('hello'), 'Hi there!');
+        });
+
+        it('should return path when passed invalid path of dictionary', () => {
+            i18n.addLocale('en', {
+                hello: 'Hi there!'
+            });
+
+            i18n.setLocale('en');
+
+            const path = 'notfound';
+            assert.equal(i18n(path), path);
+        });
+
+        it('should return dynamic greeting when passed a name', () => {
             i18n.addLocale('fr', {
                 hello: 'Bonjour {name}'
             });
@@ -47,6 +68,18 @@ describe('i18n', () => {
                 i18n('hello', { name: 'Peter Parker' }),
                 'Bonjour Peter Parker'
             );
+        });
+
+        it('should return plural when passed integer greater than 1', () => {
+            i18n.addLocale('en', {
+                plural: {
+                    msg: ['message', 'messages']
+                }
+            });
+
+            i18n.setLocale('en');
+
+            assert.equal(i18n('plural.msg', 2), 'messages');
         });
     });
 });
