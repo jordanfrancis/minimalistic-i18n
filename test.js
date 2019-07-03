@@ -46,6 +46,21 @@ describe('i18n', () => {
             assert.equal(i18n('hello'), 'Hi there!');
         });
 
+        it('should return translation within another translation', () => {
+            i18n.addLocale('en', {
+                hello: 'Hi there!',
+                welcome: 'It\'s nice to see you again',
+                combined_message: '{@hello} {@welcome}'
+            });
+
+            i18n.setLocale('en');
+
+            assert.equal(
+                i18n('combined_message', { name: 'William Wallace' }),
+                'Hi there! It\'s nice to see you again'
+            );
+        });
+
         it('should return path when passed invalid path of dictionary', () => {
             i18n.addLocale('en', {
                 hello: 'Hi there!'
@@ -54,6 +69,19 @@ describe('i18n', () => {
             i18n.setLocale('en');
 
             const path = 'notfound';
+            assert.equal(i18n(path), path);
+        });
+
+        it('should return path when passed invalid *nested* path of dictionary', () => {
+            i18n.addLocale('en', {
+                hello: 'Hi there!'
+            });
+
+            i18n.setLocale('en');
+
+            const path = 'invalid.path';
+
+            // TypeError exception is caught
             assert.equal(i18n(path), path);
         });
 
