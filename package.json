@@ -1,6 +1,6 @@
 {
   "name": "minimalistic-i18n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimalistic internationalization JavaScript library",
   "main": "index.js",
   "scripts": {
