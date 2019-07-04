@@ -2,7 +2,7 @@ const { i18n } = require('.');
 const assert = require('assert');
 
 describe('i18n', () => {
-    describe('#setLocale()', () => {
+    describe('#addLocale()', () => {
         it('should add a locale along with its corresponding data', () => {
             const dic = {
                 foo: 'bar'
