@@ -1,4 +1,4 @@
-const { i18n } = require('.');
+const i18n = require('.');
 const assert = require('assert');
 
 describe('i18n', () => {
